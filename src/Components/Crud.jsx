@@ -47,21 +47,21 @@ const Crud = () => {
 
   // function that delete the dataRow
   const DeleteBtn = (Delete_id) => {
-    const filterData = userData.filter((item, id) => id !== Delete_id);
-    setUserData(filterData);
+    const filter_data = userData.filter((item, id) => id !== Delete_id);
+    setUserData(filter_data);
   };
 
   // function that updated the dataRow
-  const UpdateBtn = (index) => {
-    const tempData = userData[index];
+  const UpdateBtn = (update_id) => {
+    const Update_select_data = userData[update_id];
     // setting the selected fileds data into forms filed
     setDataValue({
-      name: tempData.name,
-      username: tempData.username,
-      email: tempData.email,
+      name: Update_select_data.name,
+      username: Update_select_data.username,
+      email: Update_select_data.email,
     });
     setUpdateStatus(true);
-    setEditIndex(index);
+    setEditIndex(update_id);
   };
   return (
     <>
