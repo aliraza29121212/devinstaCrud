@@ -68,7 +68,7 @@ const Crud = () => {
       <div className="contianer main">
         <h1
           data-comp-title="Heading"
-          className="draggable our_comitment_sec_heading"
+          className="draggable main_heading"
           data-htmlcomponent-type="html/heading"
         >
           Dummy Crud
@@ -87,7 +87,7 @@ const Crud = () => {
                     name="name"
                     autocomplete="off"
                     value={DataValue.name}
-                    pattern="[A-Za-z]+"
+                    pattern="[A-Za-z\s]+"
                     onChange={handleChange}
                     className="form-control "
                   />

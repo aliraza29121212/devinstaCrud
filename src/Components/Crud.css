@@ -98,7 +98,7 @@ input {
   border-radius: 8px !important;
 }
 
-.our_comitment_sec_heading {
+.main_heading {
   word-wrap: anywhere;
   font-family: "Inter";
   font-style: normal;
@@ -113,7 +113,7 @@ input {
   text-align: left;
   height: 185px;
 }
-.main:hover .our_comitment_sec_heading {
+.main:hover .main_heading {
   transform: unset !important;
   line-height: 64px !important;
   font-size: 64px !important;
