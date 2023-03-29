@@ -26,7 +26,7 @@ const Crud = () => {
     event.preventDefault();
     if (updateStatus) {
       const PreviousData = userData;
-      Object.assign(PreviousData[editIndex], DataValue);
+      Object.assign(PreviousData[editIndex], DataValue); // its sets the update index row to previous data list
       setUserData([...PreviousData]);
       setUpdateStatus(false);
       setDataValue({
@@ -36,6 +36,7 @@ const Crud = () => {
       });
     } else {
       setUserData([...userData, DataValue]);
+
       setDataValue({
         id: null,
         name: "",
@@ -47,8 +48,7 @@ const Crud = () => {
 
   // function that delete the dataRow
   const DeleteBtn = (Delete_id) => {
-    const filter_data = userData.filter((item, id) => id !== Delete_id);
-    setUserData(filter_data);
+    setUserData(userData.filter((item, id) => id !== Delete_id));
   };
 
   // function that updated the dataRow
@@ -65,12 +65,19 @@ const Crud = () => {
   };
   return (
     <>
-      <div className="contianer">
-        <div className="row pt-5 p-5">
+      <div className="contianer main">
+        <h1
+          data-comp-title="Heading"
+          className="draggable our_comitment_sec_heading"
+          data-htmlcomponent-type="html/heading"
+        >
+          Dummy Crud
+        </h1>
+        <div className="row pt-0 p-5">
           <div className="col-5">
             <h1 className="text-center display-3 ">Add User</h1>
-
-            <div className="fomr_parent">
+            {/* Submit Fomr */}
+            <div className="fomr_parent ">
               <form onSubmit={handleSubmit} className="mt-5 mx-5">
                 <div className="form-group mb-4">
                   <label>Name:</label>
@@ -78,9 +85,11 @@ const Crud = () => {
                     required
                     type="text"
                     name="name"
+                    autocomplete="off"
                     value={DataValue.name}
+                    pattern="[A-Za-z]+"
                     onChange={handleChange}
-                    className="form-control"
+                    className="form-control "
                   />
                 </div>
                 <div className="form-group mb-4">
@@ -89,6 +98,7 @@ const Crud = () => {
                     required
                     type="text"
                     name="username"
+                    autocomplete="off"
                     value={DataValue.username}
                     onChange={handleChange}
                     className="form-control"
@@ -101,6 +111,7 @@ const Crud = () => {
                     required
                     type="email"
                     name="email"
+                    autocomplete="off"
                     value={DataValue.email}
                     onChange={handleChange}
                     className="form-control"
